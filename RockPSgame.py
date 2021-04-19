@@ -1,22 +1,22 @@
 from tkinter import *
 import random
 
-# initialize window
+#  code for initializing window
 
 root = Tk()
 root.geometry('400x400')
 root.resizable(0,0)
-root.title('Just Nikhil -Rock,Paper,Scissors')
+root.title('Just Nikhil -Rock,Paper,Scissors')       # you can add name of your wish
 root.config(bg ='seashell3')
 Label(root, text = 'Rock, Paper ,Scissors' , font='arial 20 bold', bg = 'seashell2').pack()
 
-# for user choice
+# code for user input 
 
 user_take = StringVar()
 Label(root, text = 'choose any one: rock, paper ,scissors' , font='arial 15 bold', bg = 'seashell2').place(x = 20,y=70)
 Entry(root, font = 'arial 15', textvariable = user_take , bg = 'antiquewhite2').place(x=90 , y = 130)
 
-# for computer choice
+#  code for computer choice
 
 comp_pick = random.randint(1,3)
 if comp_pick == 1:
@@ -28,6 +28,8 @@ else:
 
 Result = StringVar()
 
+  # Function to start the game 
+    
 def play():
     user_pick = user_take.get()
     if user_pick == comp_pick:
@@ -46,24 +48,46 @@ def play():
         Result.set('you win ,computer select paper')
     else:
         Result.set('invalid: choose at least anyone fo them - rock, paper, scissors')
+  
+# code for reset the game 
 
 def Reset():
     Result.set("")
     user_take.set("")
+    
+ # code for exit the game   
 
 def Exit():
     root.destroy()
+    
+    # here we define the button(input given by the user )
 
 Entry(root, font = 'arial 10 bold', textvariable = Result, bg ='antiquewhite2',width = 50,).place(x=25, y = 250)
 
 Button(root, font = 'arial 13 bold', text = 'PLAY'  ,padx =5,bg ='seashell4' ,command = play).place(x=150,y=190)
-
+           
 Button(root, font = 'arial 13 bold', text = 'RESET'  ,padx =5,bg ='seashell4' ,command = Reset).place(x=70,y=310)
 
 Button(root, font = 'arial 13 bold', text = 'EXIT'  ,padx =5,bg ='seashell4' ,command = Exit).place(x=230,y=310)
 
 
 root.mainloop()
+
+
+
+        # modify code as per you're need to make this game more beautiful
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
